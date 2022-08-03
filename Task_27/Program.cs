@@ -10,15 +10,15 @@ int DigitalSum(int a)
 {
     int counter = Convert.ToString(a).Length;
     int digit = 0;
-    int result = 0;
+    int sum = 0;
 
     for (int i = 0; i < counter; i++)
     {
         digit = a - a % 10;
-        result = result + (a - digit);
+        sum = sum + (a - digit);
         a = a / 10;
     }
-    return result;
+    return sum;
 }
 
 int digitalsum = DigitalSum(a);
