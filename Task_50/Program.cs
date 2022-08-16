@@ -6,42 +6,36 @@
 17 -> такого числа в массиве нет*/
 
 
-
-int[,] GetArray(int row, int col)
-{
-    int[,] array = new int[row, col];
-    Random random = new Random();
-
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = random.Next(0, 10);
-        }
-    }
-    return array;
-}
-
-void PrintArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + " ");
-        }
-        Console.WriteLine();
-    }
-}
-
 Console.Write("Enter amount of rows: ");
 int row = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter amount of columns: ");
-int col = Convert.ToInt32(Console.ReadLine());
+int column = Convert.ToInt32(Console.ReadLine());
+int[,] arr = new int[row, column];
+Random r = new Random();
+for (int i = 0; i < row; i++)
+{
+    for (int j = 0; j < column; j++)
+    {
+        arr[i, j] = r.Next(100);
+        Console.Write(arr[i, j] + " ");
+    }
+    Console.WriteLine();
+}
+Console.Write("Enter Element row position: ");
+int c1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter Element column position: ");
+int c2 = Convert.ToInt32(Console.ReadLine());
 
-PrintArray(GetArray(row, col));
+if (c1 > row || c2 > column)
+{
+    Console.Write("No element in array");
+}
+else
+{
+    Console.WriteLine("Element Positoins [" + c1 + ", " + c2 + "] Value = " + arr[c1, c2]);
+}
 
-Console.Write("Enter Element position: ");
-int elementPosition = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
 
 
