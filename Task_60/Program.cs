@@ -9,8 +9,8 @@ int z = InputNumbers("Enter z: ");
 Console.WriteLine($"");
 
 int[,,] array3D = new int[x, y, z];
-CreateArray(array3D);
-WriteArray(array3D);
+FillArray(array3D);
+PrintArray(array3D);
 
 int InputNumbers(string input)
 {
@@ -19,7 +19,7 @@ int InputNumbers(string input)
     return output;
 }
 
-void WriteArray(int[,,] array3D)
+void PrintArray(int[,,] array3D)
 {
     for (int i = 0; i < array3D.GetLength(0); i++)
     {
@@ -36,7 +36,7 @@ void WriteArray(int[,,] array3D)
     }
 }
 
-void CreateArray(int[,,] array3D)
+void FillArray(int[,,] array3D)
 {
     int[] temp = new int[array3D.GetLength(0) * array3D.GetLength(1) * array3D.GetLength(2)];
     int number;
